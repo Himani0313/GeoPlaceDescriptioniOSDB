@@ -22,6 +22,10 @@
 		E4EC9ABB1E627747008847AD /* addViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EC9ABA1E627747008847AD /* addViewController.swift */; };
 		E4EC9AC01E627F16008847AD /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EC9ABF1E627F16008847AD /* SwiftyJSON.swift */; };
 		E4EC9AC41E627FCB008847AD /* places.json in Resources */ = {isa = PBXBuildFile; fileRef = E4EC9AC31E627FCB008847AD /* places.json */; };
+		E4ECC79C1EAC452F0091F7E6 /* Places+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ECC79A1EAC452F0091F7E6 /* Places+CoreDataClass.swift */; };
+		E4ECC79D1EAC452F0091F7E6 /* Places+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ECC79B1EAC452F0091F7E6 /* Places+CoreDataProperties.swift */; };
+		E4ECC7A11EAC47F10091F7E6 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ECC7A01EAC47F10091F7E6 /* DataController.swift */; };
+		E4ECC7A31EAC490E0091F7E6 /* placedb.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = E4ECC7A21EAC490E0091F7E6 /* placedb.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		E4EC9ABA1E627747008847AD /* addViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addViewController.swift; sourceTree = "<group>"; };
 		E4EC9ABF1E627F16008847AD /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		E4EC9AC31E627FCB008847AD /* places.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = places.json; sourceTree = "<group>"; };
+		E4ECC79A1EAC452F0091F7E6 /* Places+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Places+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E4ECC79B1EAC452F0091F7E6 /* Places+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Places+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E4ECC7A01EAC47F10091F7E6 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		E4ECC7A21EAC490E0091F7E6 /* placedb.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = placedb.sqlite; path = ../../placedb.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,8 @@
 		E447D4D31E3045DC008AA940 = {
 			isa = PBXGroup;
 			children = (
+				E4ECC79A1EAC452F0091F7E6 /* Places+CoreDataClass.swift */,
+				E4ECC79B1EAC452F0091F7E6 /* Places+CoreDataProperties.swift */,
 				E447D4DE1E3045DC008AA940 /* GeoPlaceDescription */,
 				E447D4F31E3045DC008AA940 /* GeoPlaceDescriptionTests */,
 				E447D4FE1E3045DC008AA940 /* GeoPlaceDescriptionUITests */,
@@ -115,6 +125,7 @@
 		E447D4DE1E3045DC008AA940 /* GeoPlaceDescription */ = {
 			isa = PBXGroup;
 			children = (
+				E4ECC7A21EAC490E0091F7E6 /* placedb.sqlite */,
 				E4EC9AB41E62741C008847AD /* Main.storyboard */,
 				E4EC9ABF1E627F16008847AD /* SwiftyJSON.swift */,
 				E447D4DF1E3045DC008AA940 /* AppDelegate.swift */,
@@ -128,6 +139,7 @@
 				E4409C121E60E4530023ED78 /* PlaceDescriptionLibrary.swift */,
 				E4EC9ABA1E627747008847AD /* addViewController.swift */,
 				E4A5B9281EAC123D00C57A1D /* GeoPlaceDescription.xcdatamodeld */,
+				E4ECC7A01EAC47F10091F7E6 /* DataController.swift */,
 			);
 			path = GeoPlaceDescription;
 			sourceTree = "<group>";
@@ -266,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E447D4EA1E3045DC008AA940 /* LaunchScreen.storyboard in Resources */,
+				E4ECC7A31EAC490E0091F7E6 /* placedb.sqlite in Resources */,
 				E447D4E71E3045DC008AA940 /* Assets.xcassets in Resources */,
 				E4EC9AB51E62741C008847AD /* Main.storyboard in Resources */,
 				E4EC9AC41E627FCB008847AD /* places.json in Resources */,
@@ -293,10 +306,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4ECC79C1EAC452F0091F7E6 /* Places+CoreDataClass.swift in Sources */,
 				E4A5B92A1EAC123D00C57A1D /* GeoPlaceDescription.xcdatamodeld in Sources */,
 				E4EC9ABB1E627747008847AD /* addViewController.swift in Sources */,
 				E447D4E21E3045DC008AA940 /* ViewController.swift in Sources */,
 				E447D50E1E3049A1008AA940 /* PlaceDescription.swift in Sources */,
+				E4ECC7A11EAC47F10091F7E6 /* DataController.swift in Sources */,
+				E4ECC79D1EAC452F0091F7E6 /* Places+CoreDataProperties.swift in Sources */,
 				E4409C131E60E4530023ED78 /* PlaceDescriptionLibrary.swift in Sources */,
 				E42D961C1E5A358100408588 /* tableViewController.swift in Sources */,
 				E4EC9AC01E627F16008847AD /* SwiftyJSON.swift in Sources */,
