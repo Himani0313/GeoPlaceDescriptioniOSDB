@@ -15,12 +15,12 @@
  *
  * instuctor and the University with the right to build and evaluate the software package for the purpose of determining your grade and program assessment
  *
- * Purpose: Purpose: iOS app to view and manage place descriptions fetched from JSON file
+ * Purpose: To add, delete and update placedescription objects from JSON Rpc server
  *
  * Ser423 Mobile Applications
  * @author Himani Shah Himani.shah@asu.edu
  *         Software Engineering, CIDSE, ASU Poly
- * @version March 2017
+ * @version April 2017
  */
 
 import UIKit
@@ -29,34 +29,98 @@ class tableViewController: UITableViewController{
     let placeDescriptionLibraryObject = PlaceDescriptionLibrary()
     var places:[String:PlaceDescription] = [String:PlaceDescription]()
     var names:[String] = [String]()
+    var urlString:String = ""
+    var aPlace:PlaceDescription = PlaceDescription()
     
-    
-  
     override func viewDidLoad() {
+        if let infoPlist = Bundle.main.infoDictionary {
+            self.urlString = ((infoPlist["ServerURLString"]) as?  String!)!
+            NSLog("The default urlString from info.plist is \(self.urlString)")
+        }else{
+            NSLog("error getting urlString from info.plist")
+        }
         super.viewDidLoad()
         NSLog("view did load" )
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         
-        self.names = placeDescriptionLibraryObject.getPlaceTitles()
+        //self.names = placeDescriptionLibraryObject.getPlaceTitles()
         
         self.title = "Places List"
-        
+        self.PlaceNames()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-//    func navigateToNextViewController(){
-//        self.performSegue(withIdentifier: "addPlace", sender: self)
-//    }
+
+    func PlaceNames() {
+        let aConnect:PlaceDescriptionLibrary = PlaceDescriptionLibrary()
+        let resultNames:Bool = aConnect.getNames(callback: { (res: String, err: String?) -> Void in
+            if err != nil {
+                NSLog(err!)
+            }else{
+                NSLog(res)
+                if let data: Data = res.data(using: String.Encoding.utf8){
+                    do{
+                        let dict = try JSONSerialization.jsonObject(with: data,options:.mutableContainers) as?[String:AnyObject]
+                        
+                        self.names = (dict!["result"] as? [String])!
+                        self.tableView.reloadData()
+                    } catch {
+                        print("unable to convert to dictionary")
+                    }
+                }
+                
+            }
+        })  // end of method call to getNames
+    }
+    func remove(_ name: String, index: IndexPath ) {
+        let aConnect:PlaceDescriptionLibrary = PlaceDescriptionLibrary()
+        let resultNames:Bool = aConnect.removePlace(name: name, callback: { (res: String, err: String?) -> Void in
+            if err != nil {
+                NSLog(err!)
+            }else{
+                NSLog(res)
+                if let data: Data = res.data(using: String.Encoding.utf8){
+                    do{
+                        self.names.remove(at: index.row)
+                        self.tableView.deleteRows(at: [index], with: .fade)
+                    } catch {
+                        print("unable to convert to dictionary")
+                    }
+                }
+                
+            }
+        })  // end of method call to getNames
+    }
+    func add(_ jsonObject: NSMutableDictionary, pname: String ) {
+        let aConnect:PlaceDescriptionLibrary = PlaceDescriptionLibrary()
+        let resultNames:Bool = aConnect.addPlace(jsonObject: jsonObject, callback: { (res: String, err: String?) -> Void in
+            if err != nil {
+                NSLog(err!)
+            }else{
+                NSLog(res)
+                if let data: Data = res.data(using: String.Encoding.utf8){
+                    do{
+                        
+                        self.names.append(pname)
+                        self.tableView.reloadData()
+                        //self.tableView.deleteRows(at: [index], with: .fade)
+                    } catch {
+                        print("unable to convert to dictionary")
+                    }
+                }
+                
+            }
+        })  // end of method call to getNames
+    }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         print("tableView editing row at: \(indexPath.row)")
         if editingStyle == .delete {
             let selectedPlace:String = names[indexPath.row]
             print("deleting the place \(selectedPlace)")
-            placeDescriptionLibraryObject.remove(selectedPlace: selectedPlace)
-            self.names = placeDescriptionLibraryObject.getPlaceTitles()
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            self.remove(selectedPlace, index: indexPath)
+            //tableView.deleteRows(at: [indexPath], with: .fade)
             // don't need to reload data, using delete to make update
         }
     }
@@ -80,14 +144,7 @@ class tableViewController: UITableViewController{
     @IBAction func unwindToPlaceList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? addViewController, let placeDescriptionObject = sourceViewController.placeDescriptionObject {
             
-            // Add a new meal.
-            //let newIndexPath = IndexPath(row: meals.count, section: 0)
-            
-//            meals.append(meal)
-//            tableView.insertRows(at: [newIndexPath], with: .automatic)
-            placeDescriptionLibraryObject.add(selectedPlace: placeDescriptionObject, placeTitle: placeDescriptionObject.name)
-            names = placeDescriptionLibraryObject.getPlaceTitles()
-            self.tableView.reloadData()
+            add(placeDescriptionObject.toJsonObject(), pname: placeDescriptionObject.name)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -97,8 +154,6 @@ class tableViewController: UITableViewController{
         if segue.identifier == "PlaceDetail" {
             let viewController:ViewController = segue.destination as! ViewController
             let indexPath = self.tableView.indexPathForSelectedRow!
-            let aPlace = placeDescriptionLibraryObject.getPlaceDescription(placeTitle: names[indexPath.row]) as PlaceDescription
-            viewController.places = aPlace
             viewController.selectedPlace = names[indexPath.row]
             viewController.placeNames = names
             viewController.pdlo = placeDescriptionLibraryObject

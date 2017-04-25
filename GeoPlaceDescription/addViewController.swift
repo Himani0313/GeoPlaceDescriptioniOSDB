@@ -15,12 +15,12 @@
  *
  * instuctor and the University with the right to build and evaluate the software package for the purpose of determining your grade and program assessment
  *
- * Purpose: Purpose: iOS app to view and manage place descriptions fetched from JSON file
+ * Purpose: To add, delete and update placedescription objects from JSON Rpc server
  *
  * Ser423 Mobile Applications
  * @author Himani Shah Himani.shah@asu.edu
  *         Software Engineering, CIDSE, ASU Poly
- * @version March 2017
+ * @version April 2017
  */
 
 import UIKit
@@ -41,18 +41,7 @@ class addViewController: UIViewController {
     @IBAction func cancelbutton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-//    @IBAction func savebutton(_ sender: Any) {
-//        placeDescriptionObject.name = nameDisplay.text!
-//        placeDescriptionObject.description = descriptionDisplay.text!
-//        placeDescriptionObject.category = categoryDisplay.text!
-//        placeDescriptionObject.addresstitle = addTitleDisplay.text!
-//        placeDescriptionObject.address = addStreetDisplay.text!
-//        placeDescriptionObject.elevation = Float(elevationDisplay.text!)!
-//        placeDescriptionObject.latitude = Float(latitudeDisplay.text!)!
-//        placeDescriptionObject.longitude = Float(longitudeDisplay.text!)!
-//        placeDescriptionLibraryObject.add(selectedPlace: placeDescriptionObject, placeTitle: nameDisplay.text!)
-//        dismiss(animated: true, completion: nil)
-//    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Add a Place"
@@ -63,9 +52,7 @@ class addViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
+        
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

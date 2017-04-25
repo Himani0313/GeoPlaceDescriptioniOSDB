@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "24C7A4DA9138F46B6D9884B3EF2D092E1DB6A9BC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "24C7A4DA9138F46B6D9884B3EF2D092E1DB6A9BC" : 9223372036854775807,
+    "E1D7B800C87F12772E800AB7B604FEF805026413" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0C1419D6-F955-4570-ABAA-420471C8ECCB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "24C7A4DA9138F46B6D9884B3EF2D092E1DB6A9BC" : "GeoPlaceLibraryIOS\/",
+    "E1D7B800C87F12772E800AB7B604FEF805026413" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "GeoPlaceDescription",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "GeoPlaceDescription.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Himani0313\/GeoPlaceLibraryIOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "24C7A4DA9138F46B6D9884B3EF2D092E1DB6A9BC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Himani0313\/GeoPlaceDescriptioniOSDB.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E1D7B800C87F12772E800AB7B604FEF805026413"
+    }
+  ]
+}
