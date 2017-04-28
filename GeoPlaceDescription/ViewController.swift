@@ -15,13 +15,14 @@
  *
  * instuctor and the University with the right to build and evaluate the software package for the purpose of determining your grade and program assessment
  *
- * Purpose: Purpose: iOS app to view and manage place descriptions fetched from JSON file
+ * Purpose: Purpose: iOS app to view and manage place descriptions fetched from iOS core data and intialized by JSON file.
  *
  * Ser423 Mobile Applications
  * @author Himani Shah Himani.shah@asu.edu
  *         Software Engineering, CIDSE, ASU Poly
- * @version March 2017
+ * @version April 2017
  */
+
 
 
 import UIKit
@@ -53,6 +54,8 @@ class ViewController: UIViewController , UITextViewDelegate, UIPickerViewDelegat
         places.elevation = Double(displayElevation.text!)!
         places.latitude = Double(displayLatitude.text!)!
         places.longitude = Double(displayLongitude.text!)!
+        pdlo.remove(selectedPlace: places.name)
+        pdlo.add(selectedPlace: places, placeTitle: places.name)
         dismiss(animated: true, completion: nil)
     }
 
