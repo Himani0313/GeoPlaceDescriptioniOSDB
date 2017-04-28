@@ -176,7 +176,7 @@ public class PlaceDescriptionLibrary{
         }
     }
     func update(placeTitle : String, selectedPlace : PlaceDescription) {
-        <#function body#>
+    
     }
 }
 

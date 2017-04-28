@@ -30,15 +30,11 @@ class tableViewController: UITableViewController{
     var places:[String:PlaceDescription] = [String:PlaceDescription]()
     var names:[String] = [String]()
     
-    
-  
     override func viewDidLoad() {
         super.viewDidLoad()
         NSLog("view did load" )
         self.navigationItem.leftBarButtonItem = self.editButtonItem
-        
         self.names = placeDescriptionLibraryObject.getPlaceTitles()
-        
         self.title = "Places List"
         
     }
@@ -79,15 +75,14 @@ class tableViewController: UITableViewController{
     }
     @IBAction func unwindToPlaceList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? addViewController, let placeDescriptionObject = sourceViewController.placeDescriptionObject {
-            
-            // Add a new meal.
-            //let newIndexPath = IndexPath(row: meals.count, section: 0)
-            
-//            meals.append(meal)
-//            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            let newIndexPath = IndexPath(row: names.count, section: 0)
             placeDescriptionLibraryObject.add(selectedPlace: placeDescriptionObject, placeTitle: placeDescriptionObject.name)
             names = placeDescriptionLibraryObject.getPlaceTitles()
-            self.tableView.reloadData()
+            for place in names{
+                print("\n\nPlace : "+place)
+            }
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            //self.tableView.reloadData()
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
