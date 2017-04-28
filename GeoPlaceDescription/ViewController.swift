@@ -54,8 +54,7 @@ class ViewController: UIViewController , UITextViewDelegate, UIPickerViewDelegat
         places.elevation = Double(displayElevation.text!)!
         places.latitude = Double(displayLatitude.text!)!
         places.longitude = Double(displayLongitude.text!)!
-        pdlo.remove(selectedPlace: places.name)
-        pdlo.add(selectedPlace: places, placeTitle: places.name)
+        pdlo.update(placeTitle: places.name, selectedPlace: places)
         dismiss(animated: true, completion: nil)
     }
 

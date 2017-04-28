@@ -177,7 +177,26 @@ public class PlaceDescriptionLibrary{
         }
     }
     func update(placeTitle : String, selectedPlace : PlaceDescription) {
-    
+        let selectRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Places")
+        selectRequest.predicate = NSPredicate(format: "name == %@", placeTitle)
+        do{
+            let results = try mContext!.fetch(selectRequest)
+            if results.count>0 {
+                let placeObj = results[0] as! NSManagedObject
+                placeObj.setValue(selectedPlace.name, forKey:"name")
+                placeObj.setValue(selectedPlace.description, forKey:"desc")
+                placeObj.setValue(selectedPlace.category, forKey:"category")
+                placeObj.setValue(selectedPlace.addresstitle, forKey:"addtitle")
+                placeObj.setValue(selectedPlace.address, forKey:"address")
+                placeObj.setValue(selectedPlace.elevation, forKey:"elevation")
+                placeObj.setValue(selectedPlace.latitude, forKey:"latitude")
+                placeObj.setValue(selectedPlace.longitude, forKey:"longitude")
+                try mContext?.save()
+            }
+        }
+        catch let error as NSError{
+            print("Error core data adding Place \(selectedPlace.name). Error: \(String(describing:error))")
+        }
     }
 }
 

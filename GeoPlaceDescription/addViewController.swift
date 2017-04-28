@@ -42,18 +42,7 @@ class addViewController: UIViewController {
     @IBAction func cancelbutton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-//    @IBAction func savebutton(_ sender: Any) {
-//        placeDescriptionObject.name = nameDisplay.text!
-//        placeDescriptionObject.description = descriptionDisplay.text!
-//        placeDescriptionObject.category = categoryDisplay.text!
-//        placeDescriptionObject.addresstitle = addTitleDisplay.text!
-//        placeDescriptionObject.address = addStreetDisplay.text!
-//        placeDescriptionObject.elevation = Float(elevationDisplay.text!)!
-//        placeDescriptionObject.latitude = Float(latitudeDisplay.text!)!
-//        placeDescriptionObject.longitude = Float(longitudeDisplay.text!)!
-//        placeDescriptionLibraryObject.add(selectedPlace: placeDescriptionObject, placeTitle: nameDisplay.text!)
-//        dismiss(animated: true, completion: nil)
-//    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Add a Place"
