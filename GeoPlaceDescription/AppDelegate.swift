@@ -15,12 +15,12 @@
  *
  * instuctor and the University with the right to build and evaluate the software package for the purpose of determining your grade and program assessment
  *
- * Purpose: To add, delete and update placedescription objects from JSON Rpc server
+ * Purpose: Purpose: iOS app to view and manage place descriptions fetched from JSON file
  *
  * Ser423 Mobile Applications
  * @author Himani Shah Himani.shah@asu.edu
  *         Software Engineering, CIDSE, ASU Poly
- * @version April 2017
+ * @version March 2017
  */
 
 import UIKit
@@ -102,6 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+
 
 }
 

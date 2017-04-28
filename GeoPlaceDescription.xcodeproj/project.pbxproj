@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E40314191EAEF445003AFC07 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40314181EAEF445003AFC07 /* CoreData.framework */; };
-		E403141C1EAEF48B003AFC07 /* GeoPlaceDescription.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E403141A1EAEF48B003AFC07 /* GeoPlaceDescription.xcdatamodeld */; };
 		E42D961C1E5A358100408588 /* tableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42D961B1E5A358100408588 /* tableViewController.swift */; };
 		E4409C131E60E4530023ED78 /* PlaceDescriptionLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4409C121E60E4530023ED78 /* PlaceDescriptionLibrary.swift */; };
 		E447D4E01E3045DC008AA940 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E447D4DF1E3045DC008AA940 /* AppDelegate.swift */; };
@@ -18,6 +16,8 @@
 		E447D4F51E3045DC008AA940 /* GeoPlaceDescriptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E447D4F41E3045DC008AA940 /* GeoPlaceDescriptionTests.swift */; };
 		E447D5001E3045DC008AA940 /* GeoPlaceDescriptionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E447D4FF1E3045DC008AA940 /* GeoPlaceDescriptionUITests.swift */; };
 		E447D50E1E3049A1008AA940 /* PlaceDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E447D50D1E3049A1008AA940 /* PlaceDescription.swift */; };
+		E471C80F1EB3D4280073FDB9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E471C80E1EB3D4280073FDB9 /* CoreData.framework */; };
+		E471C8121EB3D44C0073FDB9 /* GeoPlaceDescription.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E471C8101EB3D44C0073FDB9 /* GeoPlaceDescription.xcdatamodeld */; };
 		E4EC9AB51E62741C008847AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4EC9AB41E62741C008847AD /* Main.storyboard */; };
 		E4EC9ABB1E627747008847AD /* addViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EC9ABA1E627747008847AD /* addViewController.swift */; };
 		E4EC9AC01E627F16008847AD /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EC9ABF1E627F16008847AD /* SwiftyJSON.swift */; };
@@ -42,8 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E40314181EAEF445003AFC07 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		E403141B1EAEF48B003AFC07 /* GeoPlaceDescription.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GeoPlaceDescription.xcdatamodel; sourceTree = "<group>"; };
 		E42D961B1E5A358100408588 /* tableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tableViewController.swift; sourceTree = "<group>"; };
 		E4409C121E60E4530023ED78 /* PlaceDescriptionLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDescriptionLibrary.swift; sourceTree = "<group>"; };
 		E447D4DC1E3045DC008AA940 /* GeoPlaceDescription.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoPlaceDescription.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +57,8 @@
 		E447D4FF1E3045DC008AA940 /* GeoPlaceDescriptionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoPlaceDescriptionUITests.swift; sourceTree = "<group>"; };
 		E447D5011E3045DC008AA940 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E447D50D1E3049A1008AA940 /* PlaceDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDescription.swift; sourceTree = "<group>"; };
+		E471C80E1EB3D4280073FDB9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E471C8111EB3D44C0073FDB9 /* GeoPlaceDescription.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GeoPlaceDescription.xcdatamodel; sourceTree = "<group>"; };
 		E4EC9AB41E62741C008847AD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E4EC9ABA1E627747008847AD /* addViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addViewController.swift; sourceTree = "<group>"; };
 		E4EC9ABF1E627F16008847AD /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E40314191EAEF445003AFC07 /* CoreData.framework in Frameworks */,
+				E471C80F1EB3D4280073FDB9 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,14 +91,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E40314171EAEF444003AFC07 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E40314181EAEF445003AFC07 /* CoreData.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		E447D4D31E3045DC008AA940 = {
 			isa = PBXGroup;
 			children = (
@@ -106,7 +98,7 @@
 				E447D4F31E3045DC008AA940 /* GeoPlaceDescriptionTests */,
 				E447D4FE1E3045DC008AA940 /* GeoPlaceDescriptionUITests */,
 				E447D4DD1E3045DC008AA940 /* Products */,
-				E40314171EAEF444003AFC07 /* Frameworks */,
+				E471C80D1EB3D4280073FDB9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,7 +127,7 @@
 				E42D961B1E5A358100408588 /* tableViewController.swift */,
 				E4409C121E60E4530023ED78 /* PlaceDescriptionLibrary.swift */,
 				E4EC9ABA1E627747008847AD /* addViewController.swift */,
-				E403141A1EAEF48B003AFC07 /* GeoPlaceDescription.xcdatamodeld */,
+				E471C8101EB3D44C0073FDB9 /* GeoPlaceDescription.xcdatamodeld */,
 			);
 			path = GeoPlaceDescription;
 			sourceTree = "<group>";
@@ -156,6 +148,14 @@
 				E447D5011E3045DC008AA940 /* Info.plist */,
 			);
 			path = GeoPlaceDescriptionUITests;
+			sourceTree = "<group>";
+		};
+		E471C80D1EB3D4280073FDB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E471C80E1EB3D4280073FDB9 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E403141C1EAEF48B003AFC07 /* GeoPlaceDescription.xcdatamodeld in Sources */,
+				E471C8121EB3D44C0073FDB9 /* GeoPlaceDescription.xcdatamodeld in Sources */,
 				E4EC9ABB1E627747008847AD /* addViewController.swift in Sources */,
 				E447D4E21E3045DC008AA940 /* ViewController.swift in Sources */,
 				E447D50E1E3049A1008AA940 /* PlaceDescription.swift in Sources */,
@@ -560,12 +560,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E403141A1EAEF48B003AFC07 /* GeoPlaceDescription.xcdatamodeld */ = {
+		E471C8101EB3D44C0073FDB9 /* GeoPlaceDescription.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E403141B1EAEF48B003AFC07 /* GeoPlaceDescription.xcdatamodel */,
+				E471C8111EB3D44C0073FDB9 /* GeoPlaceDescription.xcdatamodel */,
 			);
-			currentVersion = E403141B1EAEF48B003AFC07 /* GeoPlaceDescription.xcdatamodel */;
+			currentVersion = E471C8111EB3D44C0073FDB9 /* GeoPlaceDescription.xcdatamodel */;
 			path = GeoPlaceDescription.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

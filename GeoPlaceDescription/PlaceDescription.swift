@@ -15,14 +15,13 @@
  *
  * instuctor and the University with the right to build and evaluate the software package for the purpose of determining your grade and program assessment
  *
- * Purpose: To add, delete and update placedescription objects from JSON Rpc server
+ * Purpose: Purpose: iOS app to view and manage place descriptions fetched from JSON file
  *
  * Ser423 Mobile Applications
  * @author Himani Shah Himani.shah@asu.edu
  *         Software Engineering, CIDSE, ASU Poly
- * @version April 2017
+ * @version March 2017
  */
-
 
 import Foundation
 class PlaceDescription {
@@ -44,18 +43,33 @@ class PlaceDescription {
         self.latitude = 0
         self.longitude = 0
     }
-    init(dict: [String:AnyObject]){
-        self.name = dict["name"] as! String
-        self.description = dict["description"] as! String
-        self.category = dict["category"] as! String
-        self.addresstitle = dict["address-title"] as! String
-        self.address = dict["address-street"] as! String
-        self.elevation = dict["elevation"] as! Double
-        self.latitude = dict["latitude"] as! Double
-        self.longitude = dict["longitude"] as! Double
-        
-    }
-
+//    public init (jsonStr: String){
+//        self.name = ""
+//        self.description = ""
+//        self.category = ""
+//        self.addresstitle = ""
+//        self.address = ""
+//        self.elevation = 0
+//        self.latitude = 0
+//        self.longitude = 0
+//        
+//        if let data: NSData = jsonStr.data(using: String.Encoding.utf8) as NSData?{
+//            do{
+//                let dict = try JSONSerialization.jsonObject(with: data as Data,options:.mutableContainers) as?[String:AnyObject]
+//                self.name = (dict!["name"] as? String)!
+//                self.description = (dict!["description"] as? String)!
+//                self.category = (dict!["category"] as? String)!
+//                self.addresstitle = (dict!["addressTitle"] as? String)!
+//                self.address = (dict!["addressStreet"] as? String)!
+//                self.elevation = (dict!["elevation"] as? Float)!
+//                self.latitude = (dict!["latitude"] as? Float)!
+//                self.longitude = (dict!["longitude"] as? Float)!
+//            } catch {
+//                print("unable to convert Json to a dictionary")
+//                
+//            }
+//        }
+//    }
     public init(name: String, description: String, category: String, addressTitle: String, addressStreet: String, elevation: Double, latitude: Double, longitude: Double){
         self.name = name
         self.description = description
@@ -78,17 +92,5 @@ class PlaceDescription {
             print("unable to convert dictionary to a Json Object with error: \(error)")
         }
         return jsonStr
-    }
-    public func toJsonObject() -> NSMutableDictionary{
-        let jsonObj: NSMutableDictionary = NSMutableDictionary()
-        jsonObj.setValue(name, forKey: "name")
-        jsonObj.setValue(description, forKey: "description")
-        jsonObj.setValue(category, forKey: "category")
-        jsonObj.setValue(addresstitle, forKey: "address-title")
-        jsonObj.setValue(address, forKey: "address-street")
-        jsonObj.setValue(latitude, forKey: "latitude")
-        jsonObj.setValue(longitude, forKey: "longitude")
-        jsonObj.setValue(elevation, forKey: "elevation")
-        return jsonObj
     }
 }
